@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1> {% block title %} My Notes {% endblock %} </h1>
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="notes">
+        <div class="note">
+            <h2>Note Title</h2>
+            <p>Note Body</p>
+            <div class="actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+        <div class="note">
+            <h2>Note Title</h2>
+            <p>Note Body</p>
+            <div class="actions">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+    </div>
+    <button class="add">Add Note</button>
+</main>
+
+{% endblock %}
