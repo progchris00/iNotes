@@ -21,11 +21,7 @@ def create_app(test_config=None):
     try:
         os.makedirs(app.instance_path)
     except OSError:
-        pass
-
-    @app.route('/')
-    def test():
-        return render_template("base.html")
+        pass    
 
     from . import notes
     app.register_blueprint(notes.bp)
