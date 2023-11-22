@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 def create_app(test_config=None):
     # create and configure the app
@@ -24,7 +24,11 @@ def create_app(test_config=None):
         pass
 
     @app.route('/')
-    def hello():
-        return 'hello'
+    def test():
+        return render_template("base.html")
+
+    from . import notes
+    app.register_blueprint(notes.bp)
+    app.add_url_rule('/', endpoint='index')
 
     return app
