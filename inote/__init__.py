@@ -22,6 +22,9 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass    
+    
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     from . import notes
     app.register_blueprint(notes.bp)
