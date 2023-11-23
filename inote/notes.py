@@ -7,4 +7,4 @@ bp = Blueprint('notes', __name__)
 
 @bp.route('/')
 def index():
-    return render_template('notes/register.html')
+    return render_template('notes/index.html')
