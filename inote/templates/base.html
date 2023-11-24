@@ -10,8 +10,13 @@
         <header>
             <h1> {% block header %} {% endblock %} </h1>
             <div class="user-info">
-                <span id="user-name">Sample name</span>
-                <button id="logout-btn">Log Out</button>
+                {% if g.user %}
+                    <span id="user-name">{{ g.user['username'] }}</span>
+                    <button id="logout-btn">Log Out</button>
+                {% else %}
+                    <button id="logout-btn">Log In</button>
+                    <button id="logout-btn">Register</button>
+                {% endif %}
             </div>
             <div class="user-info">
         </header>
